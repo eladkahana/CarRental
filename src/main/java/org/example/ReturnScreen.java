@@ -5,7 +5,7 @@ import java.awt.event.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class ReturnScreen extends JFrame implements ActionListener {
+public class ReturnScreen  extends JFrame  implements ActionListener {
 
     private JComboBox<String> vehicleList;
     private JButton confirmButton;
@@ -60,7 +60,8 @@ public class ReturnScreen extends JFrame implements ActionListener {
             String carDetails = Client.getCompany().getRentedCars().get(returnedCar).getMake() + Client.getCompany().getRentedCars().get(returnedCar).getModel();
 
             try {
-                Client.CarReturn(returnedCar);
+                Client.returnCar(returnedCar);
+
             } catch (IOException | ClassNotFoundException ex) {
                 throw new RuntimeException(ex);
             }

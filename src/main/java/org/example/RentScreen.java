@@ -3,9 +3,10 @@ package org.example;
 import javax.swing.*;
 import java.awt.event.*;
 import java.io.IOException;
+import java.lang.ref.Cleaner;
 import java.util.ArrayList;
 
-public class RentScreen extends JFrame implements ActionListener {
+public class RentScreen extends JFrame  implements ActionListener {
 
     private JLabel timerLabel;
     private Timer timer;
@@ -50,7 +51,10 @@ public class RentScreen extends JFrame implements ActionListener {
         // Start the timer
         timer.start();
 
-        Client.reserve(selectedCar);
+
+
+
+        Client.reserveCar(selectedCar);
 
 
         // Create name label and text field
@@ -106,22 +110,51 @@ public class RentScreen extends JFrame implements ActionListener {
                 return;
             }
 
+
+            //update the car list
             try {
-                Client.rent(selectedCar, new Customer(name, phone));
+                Client.update();
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             } catch (ClassNotFoundException ex) {
                 throw new RuntimeException(ex);
             }
-            // Display confirmation message
-            JOptionPane.showMessageDialog(null, "You have rented " + carDetails + ".\nYour name: " + name + "\nPhone number: " + phone);
-            timer.stop();
-            dispose(); // close current screen
-            new MainScreen(); // open main screen
+
+            if(Client.getCompany().getAvailableCars().get(selectedCar) != null){
+
+                try {
+                    //rent the car
+                    Client.rentCar(selectedCar, new Customer(name, phone));
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                } catch (ClassNotFoundException ex) {
+                    throw new RuntimeException(ex);
+                }
+
+                // Display confirmation message
+                JOptionPane.showMessageDialog(null, "You have rented " + carDetails + ".\nYour name: " + name + "\nPhone number: " + phone);
+                timer.stop();
+                dispose(); // close current screen
+                new MainScreen(); // open main screen
+
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "the car is not available");
+                dispose(); // close current screen
+                new MainScreen(); // open main screen
+            }
+
         } else if (e.getSource() == cancelButton) {
             // Display confirmation message
             int result = JOptionPane.showConfirmDialog(null, "Are you sure you want to cancel?", "Cancel Rental", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
             if (result == JOptionPane.YES_OPTION) {
+                try {
+                    Client.cancel(selectedCar);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                } catch (ClassNotFoundException ex) {
+                    throw new RuntimeException(ex);
+                }
                 timer.stop();
                 dispose(); // close current screen
                 new MainScreen(); // open main screen
