@@ -49,7 +49,7 @@ public class CarRental implements Serializable {
         car.setAvailable(true);
     }
 
-    public boolean reserve(Car car) {
+    public synchronized boolean reserve(Car car) {
         if (car.isAvailable()) {
             car.setAvailable(false);
             new Thread(() -> {
@@ -71,9 +71,8 @@ public class CarRental implements Serializable {
         }
     }
 
-    public void rent(Car car, Customer customer) {
-        lock.lock();
-        try {
+    public synchronized void rent(Car car, Customer customer) {
+
             // critical section of code
 
             customers.add(customer);
@@ -84,14 +83,11 @@ public class CarRental implements Serializable {
             rentedCars.add(car);
 
             recording.put(car, customer);
-        } finally {
-            lock.unlock();
-        }
+
     }
 
-    public void carReturn(Car car) {
-        lock.lock();
-        try {
+    public synchronized void carReturn(Car car) {
+
             // critical section of code
             Customer customer = recording.get(car);
             car.setAvailable(true);
@@ -99,8 +95,6 @@ public class CarRental implements Serializable {
             availableCars.add(car);
             rentedCars.remove(car);
             recording.remove(car);
-        } finally {
-            lock.unlock();
-        }
+
     }
 }

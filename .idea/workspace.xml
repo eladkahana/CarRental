@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3410330b-2997-4845-9b83-15d3cfa0a9e4" name="Changes" comment="4/5/23">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Car.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CarRental.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CarRental.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CarRentalServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CarRentalServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MainScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ChooseScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ChooseScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/RentScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/RentScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ReturnScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ReturnScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +58,8 @@
   },
   &quot;keyToStringList&quot;: {
     &quot;ChangesTree.GroupingKeys&quot;: [
+      &quot;module&quot;,
+      &quot;directory&quot;
     ]
   }
 }</component>
@@ -144,6 +142,14 @@
       <workItem from="1683207190590" duration="131000" />
       <workItem from="1683207331055" duration="2400000" />
       <workItem from="1683210231177" duration="3953000" />
+      <workItem from="1683214205460" duration="79000" />
+      <workItem from="1683215379730" duration="169000" />
+      <workItem from="1683222297726" duration="4000" />
+      <workItem from="1683476415610" duration="125000" />
+      <workItem from="1684094046724" duration="493000" />
+      <workItem from="1684095114943" duration="130000" />
+      <workItem from="1684095357370" duration="52000" />
+      <workItem from="1684157618667" duration="19000" />
     </task>
     <task id="LOCAL‎-00001" summary="4/5/23">
       <created>1683147713061</created>
@@ -159,7 +165,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1683148053446</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL‎-00003" summary="4/5/23">
+      <created>1683214279296</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL‎-00003" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1683214279296</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

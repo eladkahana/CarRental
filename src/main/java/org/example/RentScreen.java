@@ -120,6 +120,8 @@ public class RentScreen extends JFrame  implements ActionListener {
                 throw new RuntimeException(ex);
             }
 
+
+
             if(Client.getCompany().getAvailableCars().get(selectedCar) != null){
 
                 try {

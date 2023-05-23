@@ -31,13 +31,27 @@ public class ChooseScreen extends JFrame {
         nextPageButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    int selectedCarIndex = vehicleComboBox.getSelectedIndex();
-                    new RentScreen(selectedCarIndex); // open rent screen
-                    dispose(); // close current screen
-                } catch (IOException | ClassNotFoundException ex) {
-                    throw new RuntimeException(ex);
+                int selectedCarIndex = vehicleComboBox.getSelectedIndex();
+
+                if(Client.getCompany().getAvailableCars().get(selectedCarIndex) != null){
+
+
+                    try {
+
+                        new RentScreen(selectedCarIndex); // open rent screen
+                        dispose(); // close current screen
+                    } catch (IOException | ClassNotFoundException ex) {
+                        throw new RuntimeException(ex);
+                    }
+
                 }
+                else{
+                    JOptionPane.showMessageDialog(null, "the car is not available");
+                    dispose(); // close current screen
+                    new MainScreen(); // open main screen
+                }
+
+
             }
         });
 
