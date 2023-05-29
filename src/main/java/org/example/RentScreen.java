@@ -121,8 +121,13 @@ public class RentScreen extends JFrame  implements ActionListener {
             }
 
 
-
-            if(Client.getCompany().getAvailableCars().get(selectedCar) != null){
+            try {
+                Client.update();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            } catch (ClassNotFoundException ex) {
+                throw new RuntimeException(ex);
+            }
 
                 try {
                     //rent the car
@@ -139,12 +144,7 @@ public class RentScreen extends JFrame  implements ActionListener {
                 dispose(); // close current screen
                 new MainScreen(); // open main screen
 
-            }
-            else{
-                JOptionPane.showMessageDialog(null, "the car is not available");
-                dispose(); // close current screen
-                new MainScreen(); // open main screen
-            }
+
 
         } else if (e.getSource() == cancelButton) {
             // Display confirmation message

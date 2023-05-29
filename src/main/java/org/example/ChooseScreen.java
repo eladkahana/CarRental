@@ -33,7 +33,15 @@ public class ChooseScreen extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 int selectedCarIndex = vehicleComboBox.getSelectedIndex();
 
-                if(Client.getCompany().getAvailableCars().get(selectedCarIndex) != null){
+                try {
+                    Client.update();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                } catch (ClassNotFoundException ex) {
+                    throw new RuntimeException(ex);
+                }
+
+                if(Client.getCompany().getAvailableCars().get(selectedCarIndex).isAvailable()){
 
 
                     try {
