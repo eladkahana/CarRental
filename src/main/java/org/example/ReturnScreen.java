@@ -57,7 +57,7 @@ public class ReturnScreen  extends JFrame  implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == confirmButton) {
             int returnedCar = vehicleList.getSelectedIndex();
-            String carDetails = Client.getCompany().getRentedCars().get(returnedCar).getMake() + Client.getCompany().getRentedCars().get(returnedCar).getModel();
+            String carDetails = Client.getCompany().getRentedCars().get(returnedCar).getMake() + " " + Client.getCompany().getRentedCars().get(returnedCar).getModel();
 
             try {
                 Client.returnCar(returnedCar);

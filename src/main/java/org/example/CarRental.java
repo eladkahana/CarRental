@@ -44,7 +44,7 @@ public class CarRental implements Serializable {
         return new HashMap<>(recording);
     }
 
-    public void cancel(Car car){
+    public synchronized void cancel(Car car){
         //sey available for the car
         car.setAvailable(true);
     }

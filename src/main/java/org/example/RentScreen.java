@@ -103,7 +103,7 @@ public class RentScreen extends JFrame  implements ActionListener {
         if (e.getSource() == confirmButton) {
             String name = nameField.getText();
             String phone = phoneField.getText();
-            String carDetails = Client.getCompany().getAvailableCars().get(selectedCar).getMake() + Client.getCompany().getAvailableCars().get(selectedCar).getModel();
+            String carDetails = Client.getCompany().getAvailableCars().get(selectedCar).getMake() + " " + Client.getCompany().getAvailableCars().get(selectedCar).getModel();
             // Perform validation on name and phone number
             if (name.isEmpty() || phone.isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Please fill in all details.");
